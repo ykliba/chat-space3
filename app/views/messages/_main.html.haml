@@ -1,0 +1,32 @@
+.main
+  .group-info
+    .group-info__left
+      %p.name
+        test
+      %p.member
+        Member : kawa
+    .group-info__right
+      %p.btn
+        Edit
+  
+  .message-list
+    .message
+      .message__top
+        %p.talker
+          kawa
+        %p.date
+          2020/3/28(sat) 18:05:30
+      .message__text
+        わお！
+    
+  .message-form
+    %form.new
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a messsage"}
+        %label{class: "input-box__image"}
+          = icon('fas','image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
+    
+        
+      
