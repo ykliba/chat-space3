@@ -51,16 +51,18 @@
         background-color: #2f3e51;
         padding: 20px 20px 0;
         overflow: scroll;
-        &__group {
-          margin-bottom: 40px;
-          .name {
-            font-size: 15px;
-            padding-bottom: 5px;
+          .group {
+             margin-bottom: 40px;
+             color: #ffffff;
+             text-decoration: none;
+             &__name {
+                 font-size: 15px;
+                 padding-bottom: 5px;
+             }
+             &__message {
+                 font-size: 11px;
+             }
           }
-          .message {
-            font-size: 11px;
-          }
-        }
       }
   }
 
