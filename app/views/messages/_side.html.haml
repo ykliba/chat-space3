@@ -5,15 +5,18 @@
         = current_user.name
       %ul.icons
         %li.icons__edit
-          = link_to "#" do
+          = link_to new_group_path do
             = icon("far","edit")
         %li.icons__cog
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
 
   .group-list
-    .group-list__group
-      %p.name
-        techcamp
-      %p.message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#', class:"group" do
+          .group__name
+            = group.name
+            .group__message
+              メッセージはまだありません
+    
