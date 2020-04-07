@@ -9,5 +9,5 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-  # ストロングパラメータに該当する機能です。サインアップ時に入力された「name」キーの内容の保存を許可しています。
+  # ストロングパラメータに該当する機能。サインアップ時に入力された「name」キーの内容の保存を許可している。
 end
