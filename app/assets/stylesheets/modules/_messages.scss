@@ -9,23 +9,19 @@
     float: left;
     width: 300px;
     color: #ffffff;
-    font-weight: bold;
       .side-header {
         height: 100px;
         background-color: #253141;
         display: flex;
         align-items: center;
+        padding: 0 20px;
         &__items {
-          height: 20px;
           width: 260px;
           margin: 0 auto;
           display: flex;
           justify-content: space-between;
             .name {
-              font-size: 16px;
-              color: #ffffff;
-              width: 60px;
-              height: 20px;
+              font-weight: bold;
             }
             .icons {
               width: 60px;
@@ -182,44 +178,4 @@
   }    
 }
 
-  // .message-form {
-      //   height: 90px;
-      //   background-color: #d2d2d2;
-      //   padding: 20px 40px;
-        
-      //   form {
-      //     display: flex;
-      //     .input-box {
-      //       display: flex;
-      //       width: 100vw;
-      //       position: relative;
-      //       &__text {
-      //         height: 50px;
-      //         width: 100%;
-      //         color: #434a54;
-      //         border-style: none;
-      //         padding: 0 40px 0 10px;
-      //       }
-      //       &__image {
-      //         position: absolute;
-      //         top: 10px;
-      //         right: 10px;
-      //         cursor: pointer;
-      //         font-size: 1.3rem;
-
-      //         &__file {
-      //           display: none;
-      //         }
-      //       }
-      //     }
-      //   }
-      //   .submit-btn {
-      //     width: 100px;
-      //     height: 50px;
-      //     padding: 0 30px;
-      //     margin-left: 15px;
-      //     background-color: #38aef0;
-      //     color: white;
-      //   }
-      // }
-      
+  
