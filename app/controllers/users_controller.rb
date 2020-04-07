@@ -10,8 +10,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  # current_user.updateに成功した場合、rootにリダイレクトし、失敗した場合、editのビューを再度描画する
-
+  
   private
 
   def user_params
