@@ -6,9 +6,7 @@ class GroupsController < ApplicationController
   
   def new
     @group = Group.new
-    # newアクションの中で、@groupに空のインスタンスを代入しています。これは、form_forで使用するための変数
     @group.users << current_user
-    # 「<<」という記号が使われていますが、これは配列に要素を追加するためのもの
   end
 
   def create
@@ -37,10 +35,10 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, user_ids: [])
   end
-  # 配列に対して保存を許可したい場合は、キーの名称と関連づけてバリューに「[]」と記述します。
+  # 配列に対して保存を許可したい場合は、キーの名称と関連づけてバリューに「[]」と記述。
 
   def set_group
     @group = Group.find(params[:id])
   end
-  # private以下にdef set_groupを定義し、before_actionでset_groupを指定することで、コントローラー内で共通の「@group」を使えるようにします。
+  # private以下にdef set_groupを定義し、before_actionでset_groupを指定することで、コントローラー内で共通の「@group」を使えるようにする。
 end
