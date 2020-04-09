@@ -40,7 +40,7 @@ $(function(){
    };
  }
  
- // インクリメンタルサーチ
+ 
  $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
@@ -58,12 +58,12 @@ $(function(){
       $('.message-list').append(html);
       $('form')[0].reset();
       $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
-      $(".form__submit-btn").prop('disabled', false);
-      $("#new_message")[0].reset();
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
     });
+    $(".form__submit-btn").prop('disabled', false);
+    $("#new_message")[0].reset();
  })
 
  //  自動更新
@@ -89,6 +89,7 @@ $(function(){
     .fail(function() {
       alert('error');
     });
+    $(".form__submit").prop("disabled", false);
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
