@@ -42,33 +42,34 @@ $(function(){
  
  
  $('#new_message').on('submit', function(e){
-  e.preventDefault();
-  var formData = new FormData(this);
-  var url = $(this).attr('action')
-  $.ajax({
-    url: url,
-    type: "POST",
-    data: formData,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.message-list').append(html);
-      $('form')[0].reset();
-      $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
-    })
-    .fail(function(){
-      alert("メッセージ送信に失敗しました");
-    });
-    $(".form__submit-btn").prop('disabled', false);
-    $("#new_message")[0].reset();
+   e.preventDefault();
+   var formData = new FormData(this);
+   var url = $(this).attr('action')
+   $.ajax({
+     url: url,
+     type: "POST",
+     data: formData,
+     dataType: 'json',
+     processData: false,
+     contentType: false
+   })
+   .done(function(data){
+     var html = buildHTML(data);
+     $('.message-list').append(html);
+     $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+     $('form')[0].reset();
+     $('.form__submit').prop('disabled', false);
+   })
+   .fail(function(){
+     alert("メッセージ送信に失敗しました");
+   });
  })
 
  //  自動更新
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
+
+    $(".form__submit").prop("disabled", false);
     
     $.ajax({
       url: "api/messages",
@@ -89,7 +90,6 @@ $(function(){
     .fail(function() {
       alert('error');
     });
-    $(".form__submit").prop("disabled", false);
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
